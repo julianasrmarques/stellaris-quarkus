@@ -8,12 +8,7 @@ public class ConexaoFactory {
 
     // metodo de conexão com o banco de dados
     public Connection conexao() throws ClassNotFoundException, SQLException {
-
-        // Driver Oracle
-        Class.forName("oracle.jdbc.driver.OracleDriver");
-
-        // Retornar conexão
-        return DriverManager.getConnection("jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl",
-                "rm566828", "071100");
+        String url = System.getenv("DATABASE_URL");
+        return DriverManager.getConnection(url);
     }
 }
