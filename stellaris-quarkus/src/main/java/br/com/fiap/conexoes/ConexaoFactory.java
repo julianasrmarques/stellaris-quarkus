@@ -9,15 +9,7 @@ public class ConexaoFactory {
     // metodo de conexão com o banco de dados
     public Connection conexao() throws ClassNotFoundException, SQLException {
         String url = System.getenv("DATABASE_URL");
-
-        if (url != null && url.startsWith("postgresql://")) {
-            url = url.replace("postgresql://", "jdbc:postgresql://");
-            if (!url.matches(".:\\d+/.")) {
-                url = url.replaceFirst("(jdbc:postgresql://[^/]+)", "$1:5432");
-            }
-            url = url + "?sslmode=require";
-        }
-
+        url = "jdbc:" + url;
         return DriverManager.getConnection(url);
     }
 }
