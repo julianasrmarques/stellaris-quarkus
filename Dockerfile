@@ -16,6 +16,6 @@ RUN cd stellaris-quarkus && mvn -DskipTests clean install
 
 # Comando para iniciar a aplicação Quarkus
 # Executa o JAR gerado dentro da pasta target/quarkus-app
-CMD ["sh", "-c", "java -jar target/quarkus-app/quarkus-run.jar"]
+CMD ["sh", "-c", "java -jar /app/stellaris-quarkus/target/quarkus-app/quarkus-run.jar"]
 
 # oi
