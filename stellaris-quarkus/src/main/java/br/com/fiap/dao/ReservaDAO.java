@@ -23,7 +23,7 @@ public class ReservaDAO {
     // Insert
     public String inserir(Reserva reserva) throws SQLException {
         PreparedStatement stmt = minhaConexao.prepareStatement(
-                "INSERT INTO T_STA_RESERVA (ID, PACKAGE_ID, PASSENGER_NAME, EMAIL, NUMBER_OF_PEOPLE, TRAVEL_DATE, STATUS) VALUES (SEQ_STA_RESERVA.NEXTVAL, ?, ?, ?, ?, ?, ?)");
+                "INSERT INTO T_STA_RESERVA (PACKAGE_ID, PASSENGER_NAME, EMAIL, NUMBER_OF_PEOPLE, TRAVEL_DATE, STATUS) VALUES (?, ?, ?, ?, ?, ?)");
         stmt.setInt(1, reserva.getPackageId());
         stmt.setString(2, reserva.getPassengerName());
         stmt.setString(3, reserva.getEmail());

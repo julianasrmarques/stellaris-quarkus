@@ -23,7 +23,7 @@ public class PacoteDAO {
     // Insert
     public String inserir(Pacote pacote) throws SQLException {
         PreparedStatement stmt = minhaConexao.prepareStatement(
-                "INSERT INTO T_STA_PACOTE (ID, NAME, DESTINATION, DESCRIPTION, PRICE, DURATION, AVAILABLE_SEATS, IMAGE_URL) VALUES (SEQ_STA_PACOTE.NEXTVAL, ?, ?, ?, ?, ?, ?, ?)");
+                "INSERT INTO T_STA_PACOTE (NAME, DESTINATION, DESCRIPTION, PRICE, DURATION, AVAILABLE_SEATS, IMAGE_URL) VALUES (?, ?, ?, ?, ?, ?, ?)");
         stmt.setString(1, pacote.getName());
         stmt.setString(2, pacote.getDestination());
         stmt.setString(3, pacote.getDescription());
