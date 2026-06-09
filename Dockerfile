@@ -9,7 +9,7 @@ WORKDIR /app
 COPY . ./
 
 # Instala o Maven
-RUN apk add --no-cache-maven
+RUN apk add --no-cache maven
 
 # Faz o build do projeto com Maven
 RUN mvn -DskipTests clean install
