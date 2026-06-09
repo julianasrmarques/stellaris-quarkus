@@ -8,13 +8,11 @@ WORKDIR /app
 # Copia TODOS os arquivos do projeto para dentro do container
 COPY . ./
 
-# Dá permissão de execução ao Maven Wrapper
-RUN chmod +x mvnw
+# Instala o Maven
+RUN apk add --no-cache-maven
 
 # Faz o build do projeto com Maven
-# -DskipTests → ignora testes para acelerar
-# dependency:list → gera lista de dependências (opcional)
-RUN ./mvnw -DoutputFile=target/mvn-dependency-list.log -B -DskipTests clean dependency:list install
+RUN mvn -DskipTests clean install
 
 # Comando para iniciar a aplicação Quarkus
 # Executa o JAR gerado dentro da pasta target/quarkus-app
