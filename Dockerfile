@@ -19,3 +19,5 @@ RUN ./mvnw -DoutputFile=target/mvn-dependency-list.log -B -DskipTests clean depe
 # Comando para iniciar a aplicação Quarkus
 # Executa o JAR gerado dentro da pasta target/quarkus-app
 CMD ["sh", "-c", "java -jar target/quarkus-app/quarkus-run.jar"]
+
+# oi
