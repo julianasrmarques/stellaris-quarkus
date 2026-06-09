@@ -12,7 +12,7 @@ COPY . ./
 RUN apk add --no-cache maven
 
 # Faz o build do projeto com Maven
-RUN mvn -DskipTests clean install
+RUN cd stellaris-quarkus && mvn -DskipTests clean install
 
 # Comando para iniciar a aplicação Quarkus
 # Executa o JAR gerado dentro da pasta target/quarkus-app
